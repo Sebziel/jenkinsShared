@@ -8,8 +8,10 @@ def call() {
                 echo params.nodes
                 script{
                     String ConfigureInstances = String.valueOf(params.ConfigureInstances)
+                    String ConfigureInstances = String.valueOf(params.RestartInstances)
                 }
-                echo ConfigureInstances
+                echo "ConfigureInstances: " ConfigureInstances
+                echo "RestartInstances: " RestartInstances
             }
         }
         stage('stage2'){
