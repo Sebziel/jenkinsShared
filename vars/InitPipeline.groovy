@@ -2,9 +2,9 @@ def call() {
     pipeline{
     agent any
     stages{
-        stage('Stage1'){
+        stage('echo params'){
             steps{
-                sh 'echo echoing from stage 1 of InitPipeline'
+                echo params.nodes
             }
         }
         stage('stage2'){
