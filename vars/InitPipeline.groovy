@@ -4,7 +4,10 @@ def call() {
     stages{
         stage('echo params'){
             steps{
+                echo params.Environment
                 echo params.nodes
+                echo params.ConfigureInstances
+                echo params.RestartInstances
             }
         }
         stage('stage2'){
