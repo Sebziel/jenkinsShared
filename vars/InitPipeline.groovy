@@ -6,8 +6,9 @@ def call() {
             steps{
                 echo params.Environment
                 echo params.nodes
-                echo params.ConfigureInstances
-                echo params.RestartInstances
+                ConfigureInstances = params.ConfigureInstances
+                echo ConfigureInstances
+                echo params.RestartInstances.toString()
             }
         }
         stage('stage2'){
