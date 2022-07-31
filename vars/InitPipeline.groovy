@@ -10,8 +10,8 @@ def call() {
                     String ConfigureInstances = String.valueOf(params.ConfigureInstances)
                     String RestartInstances = String.valueOf(params.RestartInstances)
                 }
-                echo "ConfigureInstances: " ConfigureInstances
-                echo "RestartInstances: " RestartInstances
+                echo "ConfigureInstances: $ConfigureInstances" 
+                echo "RestartInstances: $RestartInstances" 
             }
         }
         stage('stage2'){
