@@ -2,10 +2,9 @@ def call() {
     pipeline{
     agent any
     stages{
-        stage('echo params'){
+        stage('Playbook-sleep-test'){
             steps{
-                echo "ConfigureInstances: variable" 
-                echo "RestartInstances: variable" 
+                sh "ansible-playbook -i /var/lib/jenkins/Ansible/inventory /var/lib/jenkins/Ansible/test-playbook.yaml" 
             }
         }
         stage('pingtest'){
