@@ -4,14 +4,8 @@ def call() {
     stages{
         stage('echo params'){
             steps{
-                echo params.Environment
-                echo params.nodes
-                script{
-                    String ConfigureInstances = String.valueOf(params.ConfigureInstances)
-                    String RestartInstances = String.valueOf(params.RestartInstances)
-                }
-                echo "ConfigureInstances: $ConfigureInstances" 
-                echo "RestartInstances: $RestartInstances" 
+                echo "ConfigureInstances: variable" 
+                echo "RestartInstances: variable" 
             }
         }
         stage('stage2'){
