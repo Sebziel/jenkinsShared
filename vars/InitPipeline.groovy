@@ -5,7 +5,7 @@ def call() {
         stage('Playbook-sleep-test'){
             steps{
                 sh "ansible-playbook -i /var/lib/jenkins/Ansible/inventory /var/lib/jenkins/Ansible/test-playbook.yaml" 
-                echo "Current build number: ${BUILD_NUMBER}}"
+                echo "Current build number: ${BUILD_NUMBER}"
             }
         }
         stage('pingtest'){
