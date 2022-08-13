@@ -1,0 +1,24 @@
+- hosts: all
+  become: yes
+
+  tasks:
+
+  - name: get process id
+    shell:
+      cmd: ps -C sleep -o pid --no-headers
+    register: ProcessId
+    ignore_errors: true
+    tags : getprocess
+  - name: start sleep
+    shell:
+      cmd: nohup sleep 600 > /dev/null 2>&1 &
+    when: ProcessId.rc == 1
+    tags: startSleep
+  - name: debug mode
+    debug:
+      var: "{{ ProcessId.rc }}"
+    tags : getprocess
+  - name: kill sleep
+    shell:
+      cmd: kill "{{ ProcessId.stdout }}"
+    tags: killprocess

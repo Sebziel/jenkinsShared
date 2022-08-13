@@ -8,9 +8,9 @@ def call() {
                 echo "RestartInstances: variable" 
             }
         }
-        stage('stage2'){
+        stage('pingtest'){
             steps{
-                sh 'echo echoing from stage 2 of InitPipeline'
+                sh 'ansible -i /var/lib/jenkins/Ansible/inventory -m ping ansibleSlave3'
             }
         }     
     }
