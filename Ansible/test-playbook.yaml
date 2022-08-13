@@ -22,3 +22,8 @@
     shell:
       cmd: kill "{{ ProcessId.stdout }}"
     tags: killprocess
+  - name: create example template
+    ansible.builtin.template:
+      src: /var/lib/jenkins/Ansible/templates/jenkinsoutput.j2
+      dest: /home/ansible
+    tags: template
