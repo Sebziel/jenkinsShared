@@ -4,11 +4,13 @@ def call() {
     agent any
     stages{
         stage('Params'){
-            properties(
-                parameters {
-                booleanParam 'BoolFromGroovy'
-                }
-            )
+            steps{
+                properties(
+                    parameters {
+                    booleanParam 'BoolFromGroovy'
+                    }
+                )
+            }
         }
         stage('Playbook-sleep-test'){
             steps{
