@@ -5,8 +5,8 @@ def call() {
         stage('Params'){
             steps{
                 parameters {
-  extendedChoice bindings: '', groovyClasspath: '', groovyScript: 'return ["21.0.8","21.0.9"]', multiSelectDelimiter: ',', name: 'PLATFORM_VERSION', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_SINGLE_SELECT', visibleItemCount: 1
-}
+                     booleanParam 'BoolFromGroovy'
+                }
             }
         }
         stage('Playbook-sleep-test'){
