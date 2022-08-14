@@ -8,7 +8,7 @@ def call(body) {
     stages{
         stage('Params'){
             steps{
-                if (pip_type == "tool"){
+                if(pip_type == "tool") {
                 properties(
                     parameters {
                     booleanParam 'BoolFromGroovy'
