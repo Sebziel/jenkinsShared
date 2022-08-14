@@ -1,9 +1,7 @@
 def call() {
+    def pipelineParams = [:]
     pipeline{
     agent any
-    parameters {
-            booleanParam 'BoolFromGroovy'
-    }
     stages{
         stage('Playbook-sleep-test'){
             steps{
