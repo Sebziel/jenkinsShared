@@ -3,6 +3,13 @@ def call() {
     pipeline{
     agent any
     stages{
+        stage('Params'){
+            properties(
+                parameters {
+                booleanParam 'BoolFromGroovy'
+                }
+            )
+        }
         stage('Playbook-sleep-test'){
             steps{
                 sh "ansible-playbook -i /var/lib/jenkins/Ansible/inventory /var/lib/jenkins/Ansible/test-playbook.yaml --tags template -e build_number=${BUILD_NUMBER} -e pom_platform_version=${params.PLATFORM_VERSION} -e pom_appl_version=${params.EXTENSIONS_VERSION}"
