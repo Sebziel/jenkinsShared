@@ -8,12 +8,14 @@ def call(body) {
     stages{
         stage('Params'){
             steps{
+                script{
+                env.pipeline_type = pipelineParams.pipeline_type ? pipelineParams.pipeline_type: "tool"
                 if(pip_type == "tool") {
-                properties(
-                    parameters {
-                    booleanParam 'BoolFromGroovy'
-                    }
-                )
+                    properties(
+                        parameters {
+                            booleanParam 'BoolFromGroovy'
+                        }
+                    )
                 }
             }
         }
