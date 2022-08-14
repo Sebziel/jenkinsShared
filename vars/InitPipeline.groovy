@@ -6,11 +6,11 @@ def call() {
         stage('Params'){
             steps{
                 script{
-                    properties(
+                    properties{
                         parameters {
                             booleanParam 'BoolFromGroovy'
                         }
-                    )
+                }
                 }
              }
         }     
