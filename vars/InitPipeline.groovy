@@ -1,11 +1,14 @@
 def call() {
     pipeline{
     agent any
+    parameters {
+            booleanParam 'BoolFromGroovy'
+    }
     stages{
         stage('Params'){
             steps{
                 parameters {
-                     booleanParam 'BoolFromGroovy'
+                     booleanParam 'BoolFromGroovy2'
                 }
             }
         }
