@@ -8,11 +8,13 @@ def call(body) {
     stages{
         stage('Params'){
             steps{
+                if (pip_type == "tool"){
                 properties(
                     parameters {
                     booleanParam 'BoolFromGroovy'
                     }
                 )
+                }
             }
         }
         stage('Playbook-sleep-test'){
